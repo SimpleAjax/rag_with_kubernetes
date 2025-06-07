@@ -1,0 +1,26 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: FastAPI (Uvicorn)",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "uvicorn",
+            "args": [
+                "app.api.main:app", // <--- REPLACE THIS: Your FastAPI app instance
+                "--host", "0.0.0.0",
+                "--port", "8000",
+                "--reload" // Optional: for auto-reloading during development
+            ],
+            "jinja": true, // If you're using Jinja2 templates
+            "justMyCode": true, // Set to false if you want to step into library code
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}" // Ensure your app module is on PYTHONPATH
+                // Add other environment variables here, e.g., API keys, settings
+                // "OPENAI_API_KEY": "your_test_key",
+                // "LLM_PROVIDER": "openai"
+            },
+            "cwd": "${workspaceFolder}" // Ensure current working directory is project root
+        }
+    ]
+}
